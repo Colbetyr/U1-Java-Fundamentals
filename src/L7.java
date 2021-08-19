@@ -4,6 +4,7 @@ public class L7{
 
     public static void main(String[] args){
 
+
         //creates a decimal object roundTo2 and initializes it.
         DecimalFormat roundTo2 = new DecimalFormat("0.00");
 
@@ -23,5 +24,20 @@ public class L7{
 
         //using the roundTo2 object to call the format method from the DecimalFormat class.
         System.out.println("The number rounded to 3 decimals is " + roundTo3.format(number));
+
+        DecimalFormat currency = new DecimalFormat("$#,###.00");
+        System.out.println("You have " + currency.format(number));
+        System.out.println("You have " + currency.format(12345678));
+
+        DecimalFormat percentage = new DecimalFormat(("00%"));
+        System.out.println("Sales tax: " + percentage.format(number));
+        System.out.println("Sales tax: " + percentage.format(.07));
+
+        DecimalFormat crazy = new DecimalFormat("This is just lots of money $#,###.00");
+        System.out.println(crazy.format(123456789.23456));
+
+        System.out.println(currency.format(500*1.05));
+
+
     }
 }
